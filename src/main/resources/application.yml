@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: ledger
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${DB_NAME:ledger}
+    username: ${DB_USER:ledger}
+    password: ${DB_PASSWORD:ledgerpass}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
